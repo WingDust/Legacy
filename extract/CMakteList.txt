@@ -1,0 +1,2 @@
+project (hello)
+include_directories(${CMAKE_JS_INC})

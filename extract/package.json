@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "configure": "node-gyp configure",
+    "configuredebug": "node-gyp configure --debug",
+    "build": "node-gyp build",
+    "builddebug": "node-gyp build --debug",
+    "clean": "node-gyp clean",
+    "rebuild": "node-gyp rebuild",
+    "test": "node src/test.js",
+    "re": "node-gyp rebuild --target=16.0.1 --arch=x64 --dist-url=https://electronjs.org/headers"
+  },
+  "devDependencies": {
+    "cmake-js": "^6.2.1",
+    "electron": "^12.0.2",
+    "node-gyp": "^8.3.0"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "ffi-napi": "^4.0.3",
+    "node-addon-api": "^4.2.0",
+    "node-api-headers": "^0.0.1",
+    "ref-napi": "^3.0.3",
+    "ref-struct-napi": "^1.1.1"
+  }
+}
