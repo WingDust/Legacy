@@ -1,0 +1,47 @@
+* Packages
+** pyperclip
+** pyinstaller
+   - reference
+     - [[https://zhuanlan.zhihu.com/p/38659588][主题：简单3步将你的python转成exe格式]]
+     - [[http://c.biancheng.net/view/2690.html][主题：Python PyInstaller安装和使用教程（详解版）]]
+     - [[https://www.jb51.net/article/163664.htm][pyinstaller打包单个exe后无法执行错误的解决方法]]
+     - [[https://blog.csdn.net/CholenMine/article/details/80964272][主题：Pyinstaller打包多个.py文件]]
+   - 在使用 -w 打包成一个无窗口的包时
+     - 如果是想写成一个可交互的，就不需要写 -w 它将不会有 print() 输出
+   
+
+   - 问题
+     - **AttributeError: module 'win32ctypes.pywin32.win32api' has no attribute 'error'**
+     - <span style:"color:red">是因为pyinstaller打包时图片的格式不对 应该为.ico格式</span>
+     - 
+** pywin32
+   - 实践过的方法
+     - win32process.
+     - win32gui
+       - win32gui.FindWindow
+       - win32gui.GetWindowText(hWnd)
+         - 返回的为b'' byte 型，直接写b''比较
+       - win32gui.GetForegroundWindow()
+       - win32gui.GetActiveWindow()
+       - win32gui.GetDesktop()
+     - win32api.ShellExecute
+       - [[https://zhuanlan.zhihu.com/p/73001806][主题：win32api.ShellExecute()的参数主要包括]]
+       - 
+   - 待尝试的方法
+     + [win32api.GetWindowsDirectory](http://timgolden.me.uk/pywin32-docs/win32api__GetWindowsDirectory_meth.html)
+     + 
+     + 
+*** Refence
+    - [[http://timgolden.me.uk/pywin32-docs/contents.html][主题：Python for Win32 Extensions Help]]
+** pynput
+*** [[https://github.com/moses-palmer/pynput/issues/170][在Windows ＃170 上仅抑制热键事件]]
+*** <cmd> 在 Windows 表示 Win 键
+*** [[https://github.com/moses-palmer/pynput/issues/20][主题：How to listen Key combination? #20]]
+** keyboard
+*** keyboard.remap(key,key)
+*** keyboard.unhook(key)
+**** can cancel the remap
+
+* ctypes 
+** Winuser.h GetAsyncKeyState
+** [[https://chindafalldesu.hatenablog.com/entry/2020/01/05/001349][主题：在python中使用pyHook创建键盘记录程序（Windows）⑤]]
