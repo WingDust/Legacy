@@ -1,0 +1,28 @@
+{
+  "name": "<webpack managed>",
+  "version": "<webpack managed>",
+  "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+  },
+  "options_ui": {
+      "page": "options.html"
+  },
+  "browser_action": {
+      "default_icon": "unicorn.png",
+      "default_popup": "popup.html",
+      "default_title": "Capture page, with extra information"
+  },
+  "commands": {
+    "capture-simple": {
+      "description": "Quick capture: url, title and selection"
+    },
+    "_execute_browser_action": {
+      "description": "Capture page, with extra information"
+    }
+  },
+  "icons": {
+      "128": "unicorn.png"
+  },
+  "manifest_version": 2
+}
